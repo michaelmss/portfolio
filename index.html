@@ -1,14 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mike Smith</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <div id="header">
-        <a href="projects/projects.html">My Projects</a>
-    </div>
+    <div id="main">
+        <h1>
+            Hi, I'm Mike. Heres some of the things I have made recently
+        </h1>
+
+        <div id="arrow-left"><i class="fas fa-chevron-left"></i></div>
+        <div id="arrow-right"></div>
+        <div id="project-container">
+            <div id="1" class="project">
+                <div class="project-title">
+                    3D cube visualization
+                </div>
+                <div class="project-description">
+                    A simple 3D cube visualization made with js package three.js
+                </div>
+                <div class="item" id="cube">
+                </div>
+            </div>
+            <div id="2" style="display:none" class="project">
+                <div class="project-title">
+                    Rain game
+                </div>
+                <div class="project-description">
+                    A simple "avoid the rain" game made in javascript
+                </div>
+                <div class="item">
+
+                    <canvas></canvas>
+                    <div id="pg">
+                        Congrats! Your score is:
+                        <div id="edit"></div>
+                        <!-- test -->
+                        <span><button onclick="location.reload();">restart</button></span>
+                    </div>
+                    <canvas id="rain"></canvas>
+                    <div id="pg">
+                        Congrats! Your score is:
+                        <div id="edit"></div>
+                        <!-- test -->
+                        <span><button onclick="location.reload();">restart</button></span>
+                    </div>
+                </div>
+
+            </div>
+            <div  id="3" style="display:none" class="project">
+                <div class="project-title">
+                    Snake game
+                </div>
+                <div class="project-description">
+                    A simple snake game made in javascript
+                </div>
+                <a class="project-link" href="projects/snake/index.html"> > click here to check it out</a>
+
+            </div>
+        </div>
+        <script src="three.js"></script>
+        <script src="cube.js"></script>
+        <script src="jsraingame/js/controller.js"></script>
+        <script src="jsraingame/js/engine.js"></script>
+        <script src="jsraingame/js/game.js"></script>
+        <script src="jsraingame/js/display.js"></script>
+        <script src="jsraingame/js/main.js"></script>
 </body>
+
 </html>

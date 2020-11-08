@@ -1,7 +1,55 @@
-html{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff;
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
 }
-body{
-    background-color: #323232;
+a:visited {
+  color: #85b4ff;
+}
+a {
+  color: #85b4ff;
+}
+body {
+  background-color: #323232;
+}
+#main {
+  width: 80%;
+  padding: 20px;
+  padding-top: 5px;
+  margin: auto;
+}
+#project-container {
+}
+.project {
+  background-color: rgb(95, 95, 95);
+  padding: 15px 42px;
+  height: 80vh;
+}
+.project-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.item {
+  position: block;
+  margin: auto;
+  padding-top: 5%;
+}
+#pg {
+  z-index: 2;
+  display: block;
+  padding: 20px;
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  border: 5px solid black;
+  text-align: center;
+  font-family: sans-serif;
+  visibility: hidden;
+}
+.project-description {
+  font-size: 1.3em;
+}
+
+#edit {
+  font-size: 3em;
 }
