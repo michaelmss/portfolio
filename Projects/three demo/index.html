@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        canvas{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="three.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        //takes fov, then aspect ratio, then near and far clipping ranges of the camera.
+        const camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight, .01, 1000);
+        //renderer, magic, we use webgl because it has the most features.
+        const renderer = new THREE.WebGLRenderer();
+        //we set the size of the renderer, and we use the width and height of however big our thing is.
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        //we then push the renderer's html code to our dom.
+        document.body.appendChild(renderer.domElement);
+
+        //the data for a cube is stored in three's box geometry function,
+        const geometry = new THREE.BoxGeometry();
+        //we set the mateerial to a basic mesh material (three has several but this is a basic one) and then we set the color to white
+        const material = new THREE.MeshLambertMaterial({color:0xFFFFFF});
+        //then we need to set our cube as the mixture of the geometry and the material
+        const cube = new THREE.Mesh(geometry,material);
+        const directionalLight = new THREE.HemisphereLight( 0xffffff, 0x000000, 1);
+        scene.add( directionalLight );
+        //we then add the cube to our scene
+        scene.add(cube)
+        //and position our camera a bit different so we arent inside the cuube.
+        camera.position.z = 5;
+
+        var mouse_x = 0;
+        var mouse_y = 0;
+        function save_mouse(evt){
+            mouse_x = evt.clientX;
+            mouse_y = evt.clientY;
+        }
+
+        document.onmousemove = save_mouse;
+        
+        //then, we need to start a render loop.
+        function animate(){
+            requestAnimationFrame(animate);
+
+            cube.rotation.x = mouse_y/1000;
+            cube.rotation.y = mouse_x/1000;
+
+            renderer.render(scene,camera);
+        }
+        
+        animate();
+
+
+    </script>
+</body>
+</html>
