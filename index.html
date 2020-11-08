@@ -15,8 +15,8 @@
             Hi, I'm Mike. Heres some of the things I have made recently
         </h1>
 
-        <div id="arrow-left"><i class="fas fa-chevron-left"></i></div>
-        <div id="arrow-right"></div>
+        <div onclick="cycleLeft()" id="arrow-left"> < </i></div>
+        <div onclick="cycleRight()" id="arrow-right"> > </div>
         <div id="project-container">
             <div id="1" class="project">
                 <div class="project-title">
@@ -36,8 +36,6 @@
                     A simple "avoid the rain" game made in javascript
                 </div>
                 <div class="item">
-
-                    <canvas></canvas>
                     <div id="pg">
                         Congrats! Your score is:
                         <div id="edit"></div>
@@ -61,17 +59,48 @@
                 <div class="project-description">
                     A simple snake game made in javascript
                 </div>
-                <a class="project-link" href="projects/snake/index.html"> > click here to check it out</a>
+                <div class="item">
+                    <canvas width="500px" height="500px" id="canv"></canvas></div>
 
             </div>
         </div>
         <script src="three.js"></script>
         <script src="cube.js"></script>
+        <script src="snake.js"></script>
         <script src="jsraingame/js/controller.js"></script>
         <script src="jsraingame/js/engine.js"></script>
         <script src="jsraingame/js/game.js"></script>
         <script src="jsraingame/js/display.js"></script>
         <script src="jsraingame/js/main.js"></script>
+
+        <script>
+            var current = 1;
+            var max = 3;
+            function cycleLeft(){
+                document.getElementById(current).style.display = "none";
+                if(current==1){
+                document.getElementById(max).style.display = "block";
+                current=max;
+                }
+                else{
+                document.getElementById(current-1).style.display = "block";
+                current--;
+                }
+            }
+            function cycleRight(){
+                document.getElementById(current).style.display = "none";
+                if(current<max){
+                document.getElementById(current+1).style.display = "block";
+                current++;
+                }
+                else{
+                document.getElementById(1).style.display = "block";
+                current = 1;
+                }
+                
+            }
+
+        </script>
 </body>
 
 </html>
