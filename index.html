@@ -63,10 +63,22 @@
                     <canvas width="500px" height="500px" id="canv"></canvas></div>
 
             </div>
+            <div  id="4" style="display:none" class="project">
+                <div class="project-title">
+                    Snake rain game
+                </div>
+                <div class="project-description">
+                    why
+                </div>
+                <div class="item">
+                    <canvas width="500px" height="500px" id="snakey"></canvas></div>
+
+            </div>
         </div>
         <script src="three.js"></script>
         <script src="cube.js"></script>
         <script src="snake.js"></script>
+        <script src="snake2.js"></script>
         <script src="jsraingame/js/controller.js"></script>
         <script src="jsraingame/js/engine.js"></script>
         <script src="jsraingame/js/game.js"></script>
@@ -75,7 +87,7 @@
 
         <script>
             var current = 1;
-            var max = 3;
+            var max = 4;
             function cycleLeft(){
                 document.getElementById(current).style.display = "none";
                 if(current==1){
